@@ -28,7 +28,8 @@ Page({
             let obj = JSON.parse(res.data)
             // 保存检测到的人脸数据
             that.setData({
-              faces: obj
+              faces: obj,
+              results: []
             })
             // 若检测到人脸就就进一步调用识别API
             if(obj.length > 0)
