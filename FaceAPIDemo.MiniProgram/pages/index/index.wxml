@@ -1,0 +1,21 @@
+<!--pages/index/index.wxml-->
+<!-- 调用Camera组件来捕捉图像 -->
+<camera device-position="front" flash="off" binderror="error" style="width: 750rpx; height: 750rpx;">
+  <!-- 由于Camera是原生组件，只能通过cover-view才能覆盖在其上方 -->
+  <block wx:for="{{faces}}" wx:key="id">
+    <!-- 通过CSS实现矩形框 -->
+    <cover-view class="box" style="left:{{item.rect.left}}px;top:{{item.rect.top}}px;width:{{item.rect.width}}px;height:{{item.rect.height}}px;">
+    </cover-view>
+  </block>
+</camera>
+
+<button type="primary" bindtap="takePhoto">识别</button>
+<!-- 显示人脸数据 -->
+<view wx:for="{{faces}}" wx:key="id">
+  <view>Face {{index}}:</view>
+  <view>{{item.id}}</view>
+</view>
+<view wx:for="{{results}}" wx:key="studentId">
+  <view>Name: {{item.name}}</view>
+  <view>StudentId: {{item.studentId}}</view>
+</view>

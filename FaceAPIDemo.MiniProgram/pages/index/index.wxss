@@ -1,0 +1,8 @@
+/* pages/index/index.wxss */
+/*
+* 用于标出人脸位置
+*/
+.box {
+  border: 5rpx solid green;
+  position: relative;
+}
